@@ -4,9 +4,6 @@ import Header from './Header'
 import MovieList from "./MovieLIst";
 import FavoriteMovies from "./FavoriteMovies";
 
-
-
-
 function App() {
   const [init, setInit] = useState([]);
   const [movies, setMovies] = useState([]);
@@ -83,7 +80,7 @@ function App() {
 const searchMovies = async (term) => {
   try {
     const response = await fetch(
-      `http://www.omdbapi.com/?t=${term}&apikey=b39b3808`
+      `https://www.omdbapi.com/?t=${term}&apikey=b39b3808`
     );
     const data = await response.json();
 
@@ -120,10 +117,6 @@ const searchMovies = async (term) => {
   }
 }
 
-console.log(movies)
-console.log(favorite)
-
- 
   const addFavorite = (movie) => {
     setFavorite(
       (prevFavorite) => {
